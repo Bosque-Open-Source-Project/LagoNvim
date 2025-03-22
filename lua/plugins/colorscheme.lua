@@ -27,4 +27,10 @@ return {
     name = "dracula",
     lazy = false,
   },
+
+  --pine
+  {
+    "rose-pine/neovim",
+    lazy = false,
+  },
 }
