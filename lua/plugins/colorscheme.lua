@@ -33,4 +33,10 @@ return {
     "rose-pine/neovim",
     lazy = false,
   },
+
+  --kanawaga
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+  },
 }
