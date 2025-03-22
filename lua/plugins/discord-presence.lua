@@ -7,7 +7,7 @@ return {
         auto_update = true,
         neovim_image_text = "LagoNvim",
         main_image = "neovim",
-        client_id = "793271441293967371",
+        client_id = "1353099539237699624",
         log_level = "error",
         debounce_timeout = 10,
         enable_line_number = false,
