@@ -39,4 +39,10 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
   },
+
+  --one dark pro
+  {
+    "olimorris/onedarkpro.nvim",
+    lazy = false,
+  },
 }
