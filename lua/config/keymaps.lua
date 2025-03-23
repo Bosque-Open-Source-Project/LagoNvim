@@ -24,3 +24,10 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]]) --exit terminal
 ----> END TERMINAL KEYMAPS <----
 
 --------------------------------------------------
+
+----> START TS TOOLS KEYMAPS <----
+local tsTools = require("../language-tools/ts-tools")
+
+vim.keymap.set("n", "<leader>cttc", "<Cmd>!" .. tsTools.compiler .. "<CR>", opts)
+
+----> END TS TOOLS KEYMAPS <----
