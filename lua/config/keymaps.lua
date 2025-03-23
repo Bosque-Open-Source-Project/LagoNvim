@@ -24,3 +24,22 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]]) --exit terminal
 ----> END TERMINAL KEYMAPS <----
 
 --------------------------------------------------
+
+----> START TS TOOLS KEYMAPS <----
+
+vim.keymap.set("n", "<leader>cttc", function()
+  vim.cmd("!" .. "tsc " .. vim.api.nvim_buf_get_name(0))
+  vim.notify("i am compiled using tsc", "info", { title = "LagoNvim" })
+end, { desc = "Compile current file using tsc" })
+
+----> END TS TOOLS KEYMAPS <----
+
+----> START C AND C++ KEYMAPS <----
+vim.keymap.set("n", "<leader>ctcc", function()
+  vim.cmd(
+    "!" .. "gcc " .. vim.api.nvim_buf_get_name(0) .. " -o " .. vim.api.nvim_buf_get_name(0):match("(.+)%..+") .. ".out"
+  )
+  vim.notify("Compilado UwU", "info", { title = "LagoNvim" })
+end, { desc = "Compile gcc" })
+
+----> END C AND C++ KEYMAPS <----
