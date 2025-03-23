@@ -40,6 +40,6 @@ vim.keymap.set("n", "<leader>ctcc", function()
     "!" .. "gcc " .. vim.api.nvim_buf_get_name(0) .. " -o " .. vim.api.nvim_buf_get_name(0):match("(.+)%..+") .. ".out"
   )
   vim.notify("Compilado UwU", "info", { title = "LagoNvim" })
-end, opts)
+end, { desc = "Compile gcc" })
 
 ----> END C AND C++ KEYMAPS <----
