@@ -31,3 +31,13 @@ local tsTools = require("../language-tools/ts-tools")
 vim.keymap.set("n", "<leader>cttc", "<Cmd>!" .. tsTools.compiler .. "<CR>", opts)
 
 ----> END TS TOOLS KEYMAPS <----
+
+----> START C AND C++ KEYMAPS <----
+vim.keymap.set("n", "<leader>ctcc", function()
+  vim.cmd(
+    "!" .. "gcc " .. vim.api.nvim_buf_get_name(0) .. " -o " .. vim.api.nvim_buf_get_name(0):match("(.+)%..+") .. ".out"
+  )
+  vim.notify("Compilado UwU", "info", { title = "LagoNvim" })
+end, opts)
+
+----> END C AND C++ KEYMAPS <----
