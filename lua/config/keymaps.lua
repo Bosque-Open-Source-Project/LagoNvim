@@ -28,7 +28,10 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]]) --exit terminal
 ----> START TS TOOLS KEYMAPS <----
 local tsTools = require("../language-tools/ts-tools")
 
-vim.keymap.set("n", "<leader>cttc", "<Cmd>!" .. tsTools.compiler .. "<CR>", opts)
+vim.keymap.set("n", "<leader>cttc", function()
+  vim.cmd("!" .. tsTools.compiler .. vim.api.nvim_buf_get_name(0))
+  print("i am compiled using " .. tsTools.compiler)
+end, { desc = "Compile current file using tsc" })
 
 ----> END TS TOOLS KEYMAPS <----
 
