@@ -1,7 +1,7 @@
 return {
   {
     "andweeb/presence.nvim",
-    lazy = false, -- Load immediately
+    lazy = false, -- Load immediatelu
     config = function()
       require("presence").setup({
         auto_update = true,

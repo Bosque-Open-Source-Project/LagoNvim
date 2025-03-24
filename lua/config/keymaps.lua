@@ -43,3 +43,17 @@ vim.keymap.set("n", "<leader>ctcc", function()
 end, { desc = "Compile gcc" })
 
 ----> END C AND C++ KEYMAPS <----
+
+----> START LIVE SERVER KEYMAPS <----
+
+vim.keymap.set("n", "<leader>ctls", function()
+  vim.cmd("LiveServerStart")
+  vim.notify("Server started", "info", { title = "LagoNvim" })
+end, { desc = "Start live server" })
+
+vim.keymap.set("n", "<leader>ctld", function()
+  vim.cmd("LiveServerStop")
+  vim.notify("Server Stopped", "info", { title = "LagoNvim" })
+end, { desc = "Stop live server" })
+
+----> END LIVE SERVER KEYMAPS <----
