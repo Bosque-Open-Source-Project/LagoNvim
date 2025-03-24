@@ -11,7 +11,6 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts)
 
-
 ----> END BUFFER LINE KEYMAPS <----
 
 --------------------------------------------------
@@ -35,6 +34,8 @@ end, { desc = "Compile current file using tsc" })
 
 ----> END TS TOOLS KEYMAPS <----
 
+--------------------------------------------------
+
 ----> START C AND C++ KEYMAPS <----
 vim.keymap.set("n", "<leader>ctcc", function()
   vim.cmd(
@@ -44,6 +45,8 @@ vim.keymap.set("n", "<leader>ctcc", function()
 end, { desc = "Compile gcc" })
 
 ----> END C AND C++ KEYMAPS <----
+
+--------------------------------------------------
 
 ----> START LIVE SERVER KEYMAPS <----
 
@@ -58,3 +61,11 @@ vim.keymap.set("n", "<leader>ctld", function()
 end, { desc = "Stop live server" })
 
 ----> END LIVE SERVER KEYMAPS <----
+
+--------------------------------------------------
+
+----> START COPILOTCHAT KEYMAPS <----
+
+vim.keymap.set("n", "<leader>C", "<Cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
+
+----> END COPILOTCHAT KEYMAPS <----
