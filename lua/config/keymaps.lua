@@ -27,7 +27,7 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]]) --exit terminal
 
 ----> START TS TOOLS KEYMAPS <----
 
-vim.keymap.set("n", "<leader>cttc", function()
+vim.keymap.set("n", "<leader>cLtc", function()
   vim.cmd("!" .. "tsc " .. vim.api.nvim_buf_get_name(0))
   vim.notify("i am compiled using tsc", "info", { title = "LagoNvim" })
 end, { desc = "Compile current file using tsc" })
@@ -37,11 +37,11 @@ end, { desc = "Compile current file using tsc" })
 --------------------------------------------------
 
 ----> START C AND C++ KEYMAPS <----
-vim.keymap.set("n", "<leader>ctcc", function()
+vim.keymap.set("n", "<leader>cLcc", function()
   vim.cmd(
     "!" .. "gcc " .. vim.api.nvim_buf_get_name(0) .. " -o " .. vim.api.nvim_buf_get_name(0):match("(.+)%..+") .. ".out"
   )
-  vim.notify("Compilado UwU", "info", { title = "LagoNvim" })
+  vim.notify("I am compiled using gcc", "info", { title = "LagoNvim" })
 end, { desc = "Compile gcc" })
 
 ----> END C AND C++ KEYMAPS <----
@@ -66,6 +66,15 @@ end, { desc = "Stop live server" })
 
 ----> START COPILOTCHAT KEYMAPS <----
 
-vim.keymap.set("n", "<leader>C", "<Cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
+vim.keymap.set("n", "<leader>ctc", "<Cmd>CopilotChatToggle<CR>", { desc = "Toggle Copilot Chat" })
 
 ----> END COPILOTCHAT KEYMAPS <----
+
+--------------------------------------------------
+
+--->> START MOVIMENT KEYMAPS <----
+
+vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move current line down" })
+vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move current line up" })
+
+----> END MOVIMENT KEYMAPS <-----
