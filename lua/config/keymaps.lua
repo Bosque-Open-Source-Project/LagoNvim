@@ -11,6 +11,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts)
 
+
 ----> END BUFFER LINE KEYMAPS <----
 
 --------------------------------------------------
