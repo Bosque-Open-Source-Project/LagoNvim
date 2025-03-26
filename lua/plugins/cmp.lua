@@ -1,12 +1,16 @@
 return {
   "hrsh7th/nvim-cmp",
+  lazy = false,
+  enabled = true,
+  event = "InsertEnter",
   dependencies = { "hrsh7th/cmp-emoji" },
-  opts = function(_, opts)
+  config = function()
     local cmp = require("cmp")
-    return {
+    cmp.setup({
       window = {
-        completion = cmp.config.window.bordered(),
+        width = 90,
+        height = 90,
       },
-    }
+    })
   end,
 }
