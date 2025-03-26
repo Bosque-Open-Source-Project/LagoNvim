@@ -78,3 +78,16 @@ vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move current line down
 vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move current line up" })
 
 ----> END MOVIMENT KEYMAPS <-----
+
+--------------------------------------------------
+
+--->> START CTRL KEYMAPS <----
+
+vim.keymap.set("i", "<C-v>", '<C-r>+"', { noremap = true, silent = true })
+
+vim.keymap.set("i", "<C-z>", "<Esc>ua", { noremap = true, silent = true })
+
+--vim.keymap.set("i", "<C-a>", "<Esc>ggVGa", { noremap = true, silent = true })
+
+vim.keymap.set("i", "<C-c>", "<Esc>yyi", { noremap = true, silent = true })
+----> END CTRL KEYMAPS <----
