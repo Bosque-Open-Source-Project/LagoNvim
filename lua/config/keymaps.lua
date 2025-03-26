@@ -83,11 +83,11 @@ vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move current line up" })
 
 --->> START CTRL KEYMAPS <----
 
-vim.keymap.set("i", "<C-v>", '<C-r>+"', opts)
+vim.keymap.set("i", "<C-v>", "<C-r>+", opts)
 
 vim.keymap.set("i", "<C-z>", "<Esc>ui", opts)
 
---vim.keymap.set("i", "<C-a>", "<Esc>ggVGa", opts)
+vim.keymap.set("i", "<C-a>", "<Esc>ggVG<CR>a", opts)
 
 vim.keymap.set("i", "<C-c>", "<Esc>yyi", opts)
-----> END CTRL KEYMAPS <----
+---> END CTRL KEYMAPS <----
