@@ -98,3 +98,9 @@ vim.keymap.set("i", "<C-a>", "<Esc>ggVG<CR>a", opts)
 
 vim.keymap.set("i", "<C-c>", "<Esc>yyi", opts)
 ---> END CTRL KEYMAPS <----
+
+---> START TRANSPARENT KEY MAPS <----
+
+vim.keymap.set("n", "<leader>ut", "<Cmd>TransparentToggle<CR>", { desc = "make ui transparent" })
+
+----> END TRANSPARENT KEY MAPS <----

@@ -6,4 +6,5 @@ wk.add({
   { "<leader>cL", group = "languages" },
   { "<leader>cLt", group = "ts" },
   { "<leader>cLc", group = "c/c++" },
+  { "<leader>ut", name = "make the ui transparent" },
 })
