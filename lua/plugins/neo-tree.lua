@@ -95,8 +95,15 @@ return {
       },
       git_status = {
         symbols = {
-          unstaged = "M",
-          staged = "󰱒",
+          added = "Added",
+          deleted = "Deleted",
+          modified = "Modified",
+          renamed = "Renamed",
+          untracked = "Untracked",
+          ignored = "Ignored",
+          unstaged = "Unstaged",
+          staged = "✓",
+          conflict = "!",
         },
       },
     },
