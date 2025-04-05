@@ -30,9 +30,9 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]]) --exit terminal
 vim.keymap.set("n", "<leader>cLtc", function()
   local result = vim.fn.system("tsc " .. vim.api.nvim_buf_get_name(0))
   if result == "" then
-    vim.notify("Compilation sucessful", "info", { title = "LagoNvim" })
+    vim.notify("Compilation sucessful", "info", { title = "LagoVim" })
   else
-    vim.notify("Compilation failed", "error", { title = "LagoNvim" })
+    vim.notify("Compilation failed", "error", { title = "LagoVim" })
   end
 end, { desc = "Compile typescript" })
 
@@ -46,9 +46,9 @@ vim.keymap.set("n", "<leader>cLcc", function()
     "gcc " .. vim.api.nvim_buf_get_name(0) .. " -o " .. vim.api.nvim_buf_get_name(0):match("(.+)%..+") .. ".out"
   )
   if vim.v.shell_error == 0 then
-    vim.notify("Compilation successful", "info", { title = "LagoNvim" })
+    vim.notify("Compilation successful", "info", { title = "LagoVim" })
   else
-    vim.notify("Compilation failed: " .. table.concat(result, "\n"), "error", { title = "LagoNvim" })
+    vim.notify("Compilation failed: " .. table.concat(result, "\n"), "error", { title = "LagoVim" })
   end
 end, { desc = "Compile gcc" })
 ----> END C AND C++ KEYMAPS <----
@@ -59,12 +59,12 @@ end, { desc = "Compile gcc" })
 
 vim.keymap.set("n", "<leader>ctls", function()
   vim.cmd("LiveServerStart")
-  vim.notify("Server started", "info", { title = "LagoNvim" })
+  vim.notify("Server started", "info", { title = "LagoVim" })
 end, { desc = "Start live server" })
 
 vim.keymap.set("n", "<leader>ctld", function()
   vim.cmd("LiveServerStop")
-  vim.notify("Server Stopped", "info", { title = "LagoNvim" })
+  vim.notify("Server Stopped", "info", { title = "LagoVim" })
 end, { desc = "Stop live server" })
 
 ----> END LIVE SERVER KEYMAPS <----
