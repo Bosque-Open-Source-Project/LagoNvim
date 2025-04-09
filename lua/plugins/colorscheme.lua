@@ -1,5 +1,9 @@
 return {
-
+  --github theme
+  {
+    "projekt0n/github-nvim-theme",
+    lazy = false,
+  },
   --catppuccin
   {
     "catppuccin/nvim",
