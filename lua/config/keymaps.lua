@@ -72,7 +72,7 @@ vim.keymap.set("n", "<leader>ctc", "<Cmd>CopilotChatToggle<CR>", { desc = "Toggl
 
 --------------------------------------------------
 
---->> START MOVIMENT KEYMAPS <----
+---> START MOVIMENT KEYMAPS <----
 
 vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move current line down" })
 vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move current line up" })
@@ -81,7 +81,7 @@ vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move current line up" })
 
 --------------------------------------------------
 
---->> START CTRL KEYMAPS <----
+---> START CTRL KEYMAPS <----
 
 vim.keymap.set("i", "<C-v>", "<C-r>+", opts)
 
@@ -91,3 +91,12 @@ vim.keymap.set("i", "<C-a>", "<Esc>ggVG<CR>a", opts)
 
 vim.keymap.set("i", "<C-c>", "<Esc>yyi", opts)
 ---> END CTRL KEYMAPS <----
+
+-----------------------------------------------------
+
+------> START SHIFT KEYMAPS <----
+
+-- vim.keymap.set("i", "<S-Up>", "<Esc>Vki", opts)
+
+-- vim.keymap.set("i", "<S-Down>", "<Esc>Vji", opts)
+------>> END SHIFT KEYMAPS <----
