@@ -96,7 +96,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>yyi", opts)
 
 ------> START SHIFT KEYMAPS <----
 
--- vim.keymap.set("i", "<S-Up>", "<Esc>Vki", opts)
+vim.keymap.set("i", "<S-Up>", "<Esc>Vki", opts)
 
--- vim.keymap.set("i", "<S-Down>", "<Esc>Vji", opts)
+vim.keymap.set("i", "<S-Down>", "<Esc>Vji", opts)
 ------>> END SHIFT KEYMAPS <----
