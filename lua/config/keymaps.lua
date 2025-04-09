@@ -28,9 +28,13 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]]) --exit terminal
 ----> START TS TOOLS KEYMAPS <----
 
 vim.keymap.set("n", "<leader>cLtc", function()
-  vim.cmd("!" .. "tsc " .. vim.api.nvim_buf_get_name(0))
-  vim.notify("i am compiled using tsc", "info", { title = "LagoNvim" })
-end, { desc = "Compile current file using tsc" })
+  local result = vim.fn.system("tsc " .. vim.api.nvim_buf_get_name(0))
+  if result == "" then
+    vim.notify("Compilation sucessful", "info", { title = "LagoNvim" })
+  else
+    vim.notify("Compilation failed", "error", { title = "LagoNvim" })
+  end
+end, { desc = "Compile typescript" })
 
 ----> END TS TOOLS KEYMAPS <----
 
@@ -38,12 +42,15 @@ end, { desc = "Compile current file using tsc" })
 
 ----> START C AND C++ KEYMAPS <----
 vim.keymap.set("n", "<leader>cLcc", function()
-  vim.cmd(
-    "!" .. "gcc " .. vim.api.nvim_buf_get_name(0) .. " -o " .. vim.api.nvim_buf_get_name(0):match("(.+)%..+") .. ".out"
+  local result = vim.fn.systemlist(
+    "gcc " .. vim.api.nvim_buf_get_name(0) .. " -o " .. vim.api.nvim_buf_get_name(0):match("(.+)%..+") .. ".out"
   )
-  vim.notify("I am compiled using gcc", "info", { title = "LagoNvim" })
+  if vim.v.shell_error == 0 then
+    vim.notify("Compilation successful", "info", { title = "LagoNvim" })
+  else
+    vim.notify("Compilation failed: " .. table.concat(result, "\n"), "error", { title = "LagoNvim" })
+  end
 end, { desc = "Compile gcc" })
-
 ----> END C AND C++ KEYMAPS <----
 
 --------------------------------------------------
