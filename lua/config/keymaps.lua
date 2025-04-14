@@ -106,4 +106,14 @@ vim.keymap.set("i", "<C-c>", "<Esc>yyi", opts)
 vim.keymap.set("i", "<S-Up>", "<Esc>Vki", opts)
 
 vim.keymap.set("i", "<S-Down>", "<Esc>Vji", opts)
------->> END SHIFT KEYMAPS <----
+------> END SHIFT KEYMAPS <----
+
+-----------------------------------------------------
+
+------> START LSP KEYMAPS <----
+vim.keymap.set("n", "<leader>cg", function()
+  vim.lsp.buf.definition()
+end, { desc = "Go to LSP definition" })
+------> END LSP KEYMAPS <----
+
+-----------------------------------------------------
