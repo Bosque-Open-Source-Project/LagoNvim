@@ -115,5 +115,3 @@ vim.keymap.set("n", "<leader>cg", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to LSP definition" })
 ------> END LSP KEYMAPS <----
-
------------------------------------------------------
