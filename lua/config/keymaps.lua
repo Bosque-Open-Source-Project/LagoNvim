@@ -115,3 +115,28 @@ vim.keymap.set("n", "<leader>cg", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to LSP definition" })
 ------> END LSP KEYMAPS <----
+
+-----------------------------------------------------
+
+------> START DAP KEYMAPS <----
+local dap = require("dap")
+local dapui = require("dapui")
+
+vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "DAP Continue" })
+vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "DAP Toggle Breakpoint" })
+vim.keymap.set("n", "<leader>dB", function()
+  dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { desc = "DAP Set Conditional Breakpoint" })
+vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "DAP Step Over" })
+vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "DAP Step Into" })
+vim.keymap.set("n", "<leader>du", dap.step_out, { desc = "DAP Step Out" })
+vim.keymap.set("n", "<leader>dr", dap.restart, { desc = "DAP Restart" })
+vim.keymap.set("n", "<leader>dq", dap.terminate, { desc = "DAP Terminate" })
+
+-- DAP UI
+vim.keymap.set("n", "<leader>dui", dapui.toggle, { desc = "Toggle DAP UI" })
+vim.keymap.set("n", "<leader>ds", dapui.open, { desc = "Open DAP UI" })
+vim.keymap.set("n", "<leader>dh", dapui.close, { desc = "Close DAP UI" })
+
+------> END DAP KEYMAPS <----
+-----------------------------------------------------
