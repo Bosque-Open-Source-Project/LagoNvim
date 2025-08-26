@@ -13,14 +13,23 @@ return {
 
       -- Configurações do Xdebug
       dap.configurations.php = {
+        -- Config para rodar direto no host (sem Sail/Docker)
         {
           type = "php",
           request = "launch",
-          name = "Listen for Xdebug",
+          name = "Listen for Xdebug (Host)",
           port = 9003, -- Porta padrão do Xdebug 3
           log = true,
+        },
+        -- Config para rodar dentro do Sail/Docker
+        {
+          type = "php",
+          request = "launch",
+          name = "Listen for Xdebug (Sail)",
+          port = 9003,
+          log = true,
           pathMappings = {
-            ["/var/www/html"] = "${workspaceFolder}", -- Altere isso se seu projeto não estiver nessa pasta
+            ["/var/www/html"] = "${workspaceFolder}", -- mapeamento container → host
           },
         },
       }
