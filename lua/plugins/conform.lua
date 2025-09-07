@@ -8,6 +8,7 @@ return {
       typescript = { "prettierd" },
       css = { "prettierd" },
       html = { "prettierd" },
+      lua = {"stylua"}
     },
     formatters = {
       blade_formatter = {

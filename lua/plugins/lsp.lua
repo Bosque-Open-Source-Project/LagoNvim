@@ -3,8 +3,8 @@ return {
   config = function()
     local lspconfig = require("lspconfig")
 
-    local vue_language_server = vim.fn.expand(
-      "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server")
+    local vue_language_server =
+      vim.fn.expand("~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server")
 
     lspconfig.ts_ls.setup({
       init_options = {
@@ -13,29 +13,29 @@ return {
             name = "@vue/typescript-plugin",
             location = vue_language_server,
             languages = { "vue" },
-          }
-        }
+          },
+        },
       },
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
     })
 
     lspconfig.lua_ls.setup({})
     lspconfig.intelephense.setup({
-  filetypes = { "php" },
-  root_dir = function()
-    return vim.loop.cwd()
-  end,
-  handlers = {
-    ["client/registerCapability"] = function(_, _, _, _)
-      return { result = nil, error = nil }
-    end,
-    ["workspace/configuration"] = function(_, _, _, _)
-      return { result = nil, error = nil }
-    end,
-  },
+      filetypes = { "php" },
+      root_dir = function()
+        return vim.loop.cwd()
+      end,
+      handlers = {
+        ["client/registerCapability"] = function(_, _, _, _)
+          return { result = nil, error = nil }
+        end,
+        ["workspace/configuration"] = function(_, _, _, _)
+          return { result = nil, error = nil }
+        end,
+      },
     })
 
-     -- Diagnósticos inline
+    -- Diagnósticos inline
     vim.diagnostic.config({
       virtual_text = {
         prefix = "●",
@@ -49,5 +49,5 @@ return {
   dependencies = {
     "mason-org/mason-lspconfig.nvim",
     "mason-org/mason.nvim",
-  }
+  },
 }
