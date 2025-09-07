@@ -2,6 +2,5 @@
 require("config.lazy")
 require("config.which-key")
 require("config.ui")
-require("config.mason-lsp-vps")
 
 vim.o.clipboard = "unnamedplus"
