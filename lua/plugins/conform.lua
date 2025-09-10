@@ -3,12 +3,13 @@ return {
   opts = {
     formatters_by_ft = {
       blade = { "blade-formatter" },
-      vue = { "prettierd" },      -- Adiciona prettier para Vue
+      vue = { "prettierd" },
       javascript = { "prettierd" },
       typescript = { "prettierd" },
       css = { "prettierd" },
       html = { "prettierd" },
-      lua = {"stylua"}
+      lua = { "stylua" },
+      php = { "pretty-php" },
     },
     formatters = {
       blade_formatter = {
@@ -19,7 +20,11 @@ return {
         command = vim.fn.expand("~/.local/share/nvim/mason/bin/prettierd"),
         args = { "--stdin-filepath", "$FILENAME" },
       },
+      php_cs_fixer = {
+        command = vim.fn.expand("~/.local/share/nvim/mason/bin/pretty-php"),
+        args = { "fix", "$FILENAME" },
+        stdin = false,
+      },
     },
   },
 }
-
