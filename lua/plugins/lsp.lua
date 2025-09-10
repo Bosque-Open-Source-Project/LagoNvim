@@ -20,6 +20,9 @@ return {
     })
 
     lspconfig.lua_ls.setup({})
+    lspconfig.html.setup({})
+    lspconfig.cssls.setup({})
+    lspconfig.jsonls.setup({})
     lspconfig.intelephense.setup({
       filetypes = { "php" },
       root_dir = function()
