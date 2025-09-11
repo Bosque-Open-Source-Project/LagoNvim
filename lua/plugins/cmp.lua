@@ -7,6 +7,7 @@ return {
     "ecolog",
   },
   enabled = function()
+    vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#3b4261", fg = "NONE" })
     return not vim.tbl_contains({ "AvanteInput", "minifiles" }, vim.bo.filetype)
       and vim.bo.buftype ~= "prompt"
       and vim.b.completion ~= false
