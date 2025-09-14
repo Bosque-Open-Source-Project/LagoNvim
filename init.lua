@@ -3,4 +3,5 @@ require("config.lazy")
 require("config.which-key")
 require("config.ui")
 
-vim.o.clipboard = "unnamedplus"
+vim.g.oscyank_term = "tmux"
+vim.g.oscyank_tmux_passthrough = true
