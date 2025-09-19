@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   config = function()
     local lspconfig = require("lspconfig")
-
+    local capabilities = require("blink-cmp").get_lsp_capabilities()
     local vue_language_server =
       vim.fn.expand("~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server")
 
@@ -21,7 +21,10 @@ return {
 
     lspconfig.lua_ls.setup({})
     lspconfig.html.setup({})
-    lspconfig.cssls.setup({})
+    lspconfig.cssls.setup({
+      capabilities = capabilities,
+      filetypes = { "css", "scss", "less" },
+    })
     lspconfig.jsonls.setup({})
     lspconfig.intelephense.setup({
       filetypes = { "php" },
