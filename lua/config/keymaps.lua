@@ -6,6 +6,19 @@
 local opts = { noremap = true, silent = true }
 --------------------------------------------------
 
+----> DELETE KEYMAPS <----
+-- No Normal Mode: somente Backspace duas vezes apaga a linha sem copiar
+vim.keymap.set("n", "<BS><BS>", '"_dd', opts)
+
+-- No Normal Mode: Backspace duas vezes apaga a linha sem copiar
+vim.keymap.set("n", "<BS>", function()
+  if vim.v.count == 0 then
+    return '"_dd'
+  end
+  return "<BS>"
+end, { expr = true, noremap = true, silent = true })
+----> END DELETE KEYMAPS <----
+
 ----> START BUFFER LINE KEYMAPS <----
 
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
@@ -87,19 +100,6 @@ vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move current line up" })
 ----> END MOVIMENT KEYMAPS <-----
 
 --------------------------------------------------
-
----> START CTRL KEYMAPS <----
-
-vim.keymap.set("i", "<C-v>", "<C-r>+", opts)
-
-vim.keymap.set("i", "<C-z>", "<Esc>ui", opts)
-
-vim.keymap.set("i", "<C-a>", "<Esc>ggVG<CR>a", opts)
-
-vim.keymap.set("i", "<C-c>", "<Esc>yyi", opts)
----> END CTRL KEYMAPS <----
-
------------------------------------------------------
 
 ------> START SHIFT KEYMAPS <----
 

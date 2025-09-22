@@ -2,3 +2,4 @@
 require("config.lazy")
 require("config.which-key")
 require("config.ui")
+require("config.clipboard")
