@@ -6,19 +6,6 @@
 local opts = { noremap = true, silent = true }
 --------------------------------------------------
 
-----> DELETE KEYMAPS <----
--- No Normal Mode: somente Backspace duas vezes apaga a linha sem copiar
-vim.keymap.set("n", "<BS><BS>", '"_dd', opts)
-
--- No Normal Mode: Backspace duas vezes apaga a linha sem copiar
-vim.keymap.set("n", "<BS>", function()
-  if vim.v.count == 0 then
-    return '"_dd'
-  end
-  return "<BS>"
-end, { expr = true, noremap = true, silent = true })
-----> END DELETE KEYMAPS <----
-
 ----> START BUFFER LINE KEYMAPS <----
 
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
